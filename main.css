@@ -1,5 +1,6 @@
 :root{
     --verde-nav:#3E9722;
+    --gris-claro:lightgray;
     --gris-oscuro:#666;
     --negro-claro: #333;
     --naranja:#E58C24;
@@ -7,6 +8,7 @@
     --verde-pistacho:#CAE646;
     --noticias-background:lightgray
 }
+/* reseteamos todos los margenes y padding para trabajar comodos */
 *{
     margin:0px;
     padding: 0px;
@@ -15,11 +17,15 @@ ol,ul{
     list-style: none;
 }
 a{
+    /* parece en las fotos como un color azul mas intenso para los enlaces */
     color: blue;
 }
 body{
+    box-sizing: border-box;
+    /* al rededor de toda la pagina mantengo un borde que aparece en la imagen */
+    padding:10px;
     height: 100%;
-    width: 100vw;
+    width: 100%;
     display: grid;
     grid-template-columns: auto minmax(1fr, 800px) auto;
     grid-template-rows: repeat(4,1fr);
@@ -33,50 +39,73 @@ body{
 header{
     grid-area:header;
     display: block;
+
     .header-principal{
         display: flex;
         flex-flow: row nowrap;
-        justify-content: space-between;
+        justify-content: space-between;   
+        & form{
+            display: inline;
 
+            & label{
+                font-size: 1.2em;
+                margin: 10px;
+            }
+        }
     }
     & nav{
-        background-color: green;
+        background-color: var(--verde-nav);
         display: flex;
         flex-flow: row wrap;
         justify-content: flex-start;
-        gap:5px;
+        align-items: center;
+        gap:30px;
+        height: 5vh;
+        color:white;
+        & ul{
+            display: contents;
+        }
     }
 }
 .lado-izquierdo{
     grid-area:columna-izquierda;
+
     .left-aside{
-    
+        padding: 10px;
         min-width: 150px;
         max-width: 200px;
-        background-color: var(--noticias-background);
+        background-color: var(--gris-claro);
         border: 2px solid var(--gris-oscuro);
         height: fit-content;
+
         & header{
             & h2{
-                font-size: 1em;
+                font-size: 1.1em;
             }
         }
     }
-    .publi-aside{
+    .publi{
+        padding: 10px;
         margin-top: 20px;
         background-color: transparent;
         border: 2px dotted var(--naranja);
         min-width: 150px;
         max-width: 200px;
         height: fit-content;
+
         & header{
             color:var(--naranja);
             text-decoration: underline;
+        }
+        & p{
+            color:var(--gris-oscuro);
         }
 
         
     }
 }
+
+/* todos los segguir leyendo... */
 footer>a{
     color:var(--naranja);
 }
@@ -85,6 +114,23 @@ footer>a{
     grid-area:columna-derecha;
     min-width: 150px;
     max-width: 200px;
+    border: 1px solid var(--naranja);
+    height: fit-content;
+    font-size: 1.2em;
+
+    & section{
+        margin:10px;
+        &>header{
+            font-size: 0.8em;
+            background-color: var(--azul);
+            color: white;
+            margin: 5px 0px;
+        }
+        &>footer>a{
+            
+            color: blue;
+        }
+    }
     
 }
 
@@ -92,25 +138,31 @@ main{
     grid-area:principal;
     width:100%;
     height: 100%;
-
-    max-width: 800px;/*Establecido para que no se rompa la 
+    max-width: 1800px;/*Establecido para que no se rompa la 
     estructura a partir de 1800px, el contenido se quedara en el centro de la celda*/
+
     & article{
         display: block;
+        font-size: 1.2em;
+
         & h1{
             color: var(--naranja);
         }
+
         & .contenido-articulo{
             margin-top: 10px;
             display: block;
             & p{
-               display: block;
-               font-size: 1.2em;
+                margin:5px 0px;
+                display: block;
+                color:var(--negro-claro);
             }
+
             & img{
                 float: left;
     
             }
+
             
         }
     }
@@ -119,27 +171,33 @@ body>footer{
     grid-area:footer;
     background-color: var(--verde-pistacho);
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row nowrap;
     justify-content: flex-start;
-    gap:5px;
     justify-content: space-between;
-    padding: 0px 5%;
+    height: 5vh;
+    padding: 10px 5%;
+    border-top: solid 1px var(--negro-claro);
+    border-bottom: solid 1px var(--negro-claro);
+    box-sizing: border-box;
     & nav{
         display: flex;
         flex-wrap: nowrap;
         flex-direction: row;
-        gap: 2px;
+        gap: 5px;
+        & ul{
+            display: contents;
+        }
     }
-    & div{
+
+    #copyRightYw3c{
         display: flex;
-        flex-wrap: nowrap;
         flex-direction: row;
-        gap: 2px;
-        align-items: flex-start;
+        flex-wrap: nowrap;
         
+        & p{
+            display: block;
+            white-space: nowrap;
+        }
+
     }
 }
-
-
-
-

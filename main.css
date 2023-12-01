@@ -11,6 +11,9 @@
     margin:0px;
     padding: 0px;
 }
+ol,ul{
+    list-style: none;
+}
 a{
     color: blue;
 }
@@ -18,14 +21,14 @@ body{
     height: 100%;
     width: 100vw;
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto minmax(1fr, 800px) auto;
     grid-template-rows: repeat(4,1fr);
     grid-template:
     "header header header"
-    "noticias principal columna-derecha"
-    "publicidad principal columna-derecha"
+    "columna-izquierda principal columna-derecha"
+    "columna-izquierda principal columna-derecha"
     "footer footer footer";
-    gap: 5px;
+    gap: 40px;
 }
 header{
     grid-area:header;
@@ -44,25 +47,40 @@ header{
         gap:5px;
     }
 }
-.left-aside{
-    grid-area:noticias;
-    min-width: 150px;
-    max-width: 200px;
-    background-color: var(--noticias-background);
-    border: 2px solid var(--gris-oscuro);
-    & header{
-        & h2{
-            font-size: 1em;
+.lado-izquierdo{
+    grid-area:columna-izquierda;
+    .left-aside{
+    
+        min-width: 150px;
+        max-width: 200px;
+        background-color: var(--noticias-background);
+        border: 2px solid var(--gris-oscuro);
+        height: fit-content;
+        & header{
+            & h2{
+                font-size: 1em;
+            }
         }
     }
+    .publi-aside{
+        margin-top: 20px;
+        background-color: transparent;
+        border: 2px dotted var(--naranja);
+        min-width: 150px;
+        max-width: 200px;
+        height: fit-content;
+        & header{
+            color:var(--naranja);
+            text-decoration: underline;
+        }
+
+        
+    }
 }
-.publi-aside{
-    grid-area:publicidad;
-    background-color: transparent;
-    border: 2px dotted var(--naranja);
-    min-width: 150px;
-    max-width: 200px;
+footer>a{
+    color:var(--naranja);
 }
+
 .right-aside{
     grid-area:columna-derecha;
     min-width: 150px;
@@ -74,17 +92,22 @@ main{
     grid-area:principal;
     width:100%;
     height: 100%;
-    display: block;
+
+    max-width: 800px;/*Establecido para que no se rompa la 
+    estructura a partir de 1800px, el contenido se quedara en el centro de la celda*/
     & article{
+        display: block;
         & h1{
             color: var(--naranja);
         }
-        & div{
+        & .contenido-articulo{
+            margin-top: 10px;
             display: block;
             & p{
                display: block;
+               font-size: 1.2em;
             }
-            & image{
+            & img{
                 float: left;
     
             }
@@ -92,8 +115,9 @@ main{
         }
     }
 }
-footer{
+body>footer{
     grid-area:footer;
+    background-color: var(--verde-pistacho);
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;

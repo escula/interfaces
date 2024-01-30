@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&display=swap');
+@import url(fuentes.css);
+:root{
+    --background-header-color:rgb(229,250,65,1);
+    --letter-h1-color:rgb(229,250,67,1);
+    --generic-background-color: #151515;
+    --background-div-2:#FB594E;
+    --background-feature: #262626;
+    --background-footer: #1184FA;
+
+    --white-border: #fafafa;
+    --photo-background-1: url("assets/escalada_1.png");
+    --photo-background-2: url("assets/presas_1.png");
+    --background-div-3: url("assets/instalaciones.png");
+}
+
+
+header{
+    background-color: var(--background-header-color);
+}
+
+main>div{
+
+
+    height: 100vh;
+}
+
+nav >ul{
+    display: flex;
+}
+
+.background-1{
+    background-image: var(--photo-background-1);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+div.background-1>h1{
+    top: 20vh;
+}
+
+
+.background-2{
+    background-color:  var(--background-div-2);
+}
+
+.decorator-border{
+    border: 12em solid var(--generic-background-color);
+}
+.imagen-presas{
+    transform: rotate(135deg);
+    object-fit: cover;
+    width: 200% ;
+    
+}
+
+.background-3{
+    background-image:  var(--background-div-3);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.rectangle-feature{
+    background-color: var(--background-feature);
+    border: 5px solid var(--white-border);
+    border-radius: 22px ;
+    z-index: 1;
+    width: 25%;
+    align-self:flex-end ;
+    
+}
+
+#triangle{
+    width: 0;
+    height: 0;
+    border-top: 50vw solid red;
+    border-left: 50vw solid transparent;
+    right: 0;
+    top:0;
+    z-index:0;
+}
+
+.background-4{
+    background-color: var(--generic-background-color);
+}
+
+.poly {
+    height: 70%;
+    aspect-ratio: 1/1; /* existe embed-responsive en boostrap 4.6 pero no me funciona de la misma manera*/
+    background-image:url(assets/poligono.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.cuadrado{
+    border: 5px solid var(--white-border);
+    height: 70%;
+    aspect-ratio: 1/1; /* existe embed-responsive en boostrap 4.6 pero no me funciona de la misma manera*/
+}
+
+.split-bar{
+    transform: rotate(135deg); 
+    background-color: var(--white-border); 
+    height: 10px; /* Al ser el padre flex no deja aplicar un ancho mayor al padre*/
+    
+    
+}
+
+footer{
+    background-color: var(--background-footer);
+    height: 50vh;
+}
+
+/* Cuando es movil */
+.pulsador-menu-lateral{
+    display: none;
+}
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+  
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+@media screen  and (orientation: portrait) {
+    .decorator-border{
+        border: 6em solid var(--generic-background-color);
+    }
+    .pulsador-menu-lateral{
+        display: inline;
+    }
+    nav>ul{
+        display: none !important;
+    }
+    
+}
+
+@media (max-width: 1700px) and (orientation: portrait){
+    .rectangle-feature{
+        margin: 0px !important;
+        width: 80% !important;
+        align-self: center;
+    }
+}

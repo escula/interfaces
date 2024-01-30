@@ -1,0 +1,146 @@
+:root{
+    --verde-nav:#3E9722;
+    --gris-oscuro:#666;
+    --negro-claro: #333;
+    --naranja:#E58C24;
+    --azul:#3C74E6;
+    --verde-pistacho:#CAE646;
+    --noticias-background:lightgray
+}
+*{
+    margin:0px;
+    padding: 0px;
+}
+ol,ul{
+    list-style: none;
+}
+a{
+    color: blue;
+}
+body{
+    height: 100%;
+    width: 100vw;
+    display: grid;
+    grid-template-columns: auto minmax(1fr, 800px) auto;
+    grid-template-rows: repeat(4,1fr);
+    grid-template:
+    "header header header"
+    "columna-izquierda principal columna-derecha"
+    "columna-izquierda principal columna-derecha"
+    "footer footer footer";
+    gap: 40px;
+}
+
+header{
+    grid-area:header;
+    display: block;
+    .header-principal{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+
+    }
+    & nav{
+        background-color: green;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        gap:5px;
+    }
+}
+.lado-izquierdo{
+    grid-area:columna-izquierda;
+    .left-aside{
+    
+        min-width: 150px;
+        max-width: 200px;
+        background-color: var(--noticias-background);
+        border: 2px solid var(--gris-oscuro);
+        height: fit-content;
+        & header{
+            & h2{
+                font-size: 1em;
+            }
+        }
+    }
+    .publi-aside{
+        margin-top: 20px;
+        background-color: transparent;
+        border: 2px dotted var(--naranja);
+        min-width: 150px;
+        max-width: 200px;
+        height: fit-content;
+        & header{
+            color:var(--naranja);
+            text-decoration: underline;
+        }
+
+        
+    }
+}
+footer>a{
+    color:var(--naranja);
+}
+
+.right-aside{
+    grid-area:columna-derecha;
+    min-width: 150px;
+    max-width: 200px;
+    
+}
+
+main{
+    grid-area:principal;
+    width:100%;
+    height: 100%;
+
+    max-width: 800px;/*Establecido para que no se rompa la 
+    estructura a partir de 1800px, el contenido se quedara en el centro de la celda*/
+    & article{
+        display: block;
+        & h1{
+            color: var(--naranja);
+        }
+        & .contenido-articulo{
+            margin-top: 10px;
+            display: block;
+            & p{
+               display: block;
+               font-size: 1.2em;
+            }
+            & img{
+                float: left;
+    
+            }
+            
+        }
+    }
+}
+body>footer{
+    grid-area:footer;
+    background-color: var(--verde-pistacho);
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    gap:5px;
+    justify-content: space-between;
+    padding: 0px 5%;
+    & nav{
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        gap: 2px;
+    }
+    & div{
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        gap: 2px;
+        align-items: flex-start;
+        
+    }
+}
+
+
+
+

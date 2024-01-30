@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Up</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <header style="height: 75px;">
+        <nav class="d-flex flex-row justify-content-between h-100 mr-5 ml-5 flex-wrap">
+            <img class="align-self-center h-75 w-auto" src="assets/logo_negro.png" alt="">
+            <ul class="list-inline  gap-3 flex-row align-items-center m-0" >
+                <li class="mr-2"><a href="errorPage.html">COMPETICIONES</a></li>
+                <li class="mr-2"><a href="errorPage.html">ENTRADAS</a></li>
+                <li class="mr-2"><a href="errorPage.html">CLASES</a></li>
+            </ul>
+            <a href="" class="align-self-center"><img src="assets/icons8-lupa.svg" alt=""></a>
+            <a class="align-self-center"><img src="assets/iconUser.svg" alt=""></a>
+            <span id="botonMenuLateral"class="align-self-center pulsador-menu-lateral"style="font-size:30px;cursor:pointer " onclick="abrirBarraLateral()">&#9776;</span>
+        </nav>
+    </header>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">COMPETICIONES</a>
+        <a href="#">ENTRADAS</a>
+        <a href="#">CLASES</a>
+    </div>
+
+    <main>
+        <div class="background-1 d-flex flex-column position-relative">
+            <h1 class="w-25 mt-20 position-absolute ml-5">PRUEBA LAS NUEVAS PRESAS</h1>
+        </div>
+        <div style="height: 10vh;" class="d-flex flex-column justify-content-around align-items-center">
+            <hr class="w-75 m-0" >
+            <hr class="m-0" style="width: 90%;">
+            <hr class="w-75 m-0">
+            <hr class="w-50 m-0">
+        </div>
+        <div class="position-relative background-2 d-flex flex-column overflow-hidden">
+            <h1 style="top:1.5em" class="w-100 position-absolute text-center">Presas que nunca has visto</h1>
+            <div class="d-flex justify-content-center flex decorator-border h-100 overflow-hidden">
+                <img src="assets/presas_1.png" alt="tipos de presas escalada" class="imagen-presas overflow-hidden">
+            </div>
+        </div>
+        <div style="height: 10vh;" class="d-flex flex-column justify-content-around align-items-center">
+            <hr class="w-75 m-0" >
+            <hr class="m-0" style="width: 90%;">
+            <hr class="w-75 m-0">
+            <hr class="w-50 m-0">
+        </div>
+        <div class="background-3 position-relative overflow-hidden d-flex flex-column justify-content-center">
+            <div class="rectangle-feature position-relative pl-5 pr-5 m-20p" style="margin-right:10%; overflow: auto;">
+                <h1>el rocódromo más grande de europa</h1>
+                <h3>Cuente con 5500 m2 escalables, con todos los niveles de escalada conocidos</h3>
+            </div>
+            <div id="triangle" class="position-absolute"></div>
+
+        </div>
+        <div style="height: 10vh;" class="d-flex flex-column justify-content-around align-items-center">
+            <hr class="w-75 m-0" >
+            <hr class="m-0" style="width: 90%;">
+            <hr class="w-75 m-0">
+            <hr class="w-50 m-0">
+        </div>
+        <div class="background-4 overflow-hidden d-flex justify-content-around align-items-center flex-wrap">
+
+            <div class="poly d-flex flex-column justify-content-center align-items-center">
+
+                <h1 class="text-center mb-5 w-50">clases particulares y grupales</h1>
+                <h3 class="text-center w-50 mt-5">Adaptadas a todas las edades y a cualquier tamaño de grupo</h3>
+            </div>
+
+            <div class="cuadrado position-relative d-flex align-items-center position-relative overflow-hidden">
+
+                <img src="assets/ninos.jpeg" alt="" style="position: absolute; width: 100%; height: auto; top: 0; left: 0; clip-path: polygon(1% 1%, 99% 1%, 1% 99%)">
+                <img src="assets/adultos.jpeg" alt="" style="position: absolute; width: 100%; height: auto; top: 0; left: 0; clip-path: polygon(99% 99%, 99% 1%, 1% 99%)">
+                <hr class="split-bar w-100" >
+
+            </div>
+        </div>
+        <div style="height: 10vh;" class="d-flex flex-column justify-content-around align-content-center"></div>
+        
+    </main>
+    <footer class="d-flex flex-column align-items-center">
+        <img class="w-auto mt-5" src="assets/logo_blanco.png" alt="" style="height: 20%;;">
+        <ul class="list-inline d-flex flex-row align-items-center mt-4 m-0">
+            <li><a href=""><img src="assets/insta.png" alt=""></a></li>
+            <li class="ml-5"><a href=""><img src="assets/twitter.png" alt=""></a></li>
+            <li class="ml-5"><a href=""><img src="assets/iconTiktok.png" alt=""></a></li>
+        </ul>
+        <hr class="bg-light mt-5 w-75">
+        <ul class="list-inline d-flex flex-row align-items-center mt-4 m-0 ">
+            <li><a href=""><p>Competiciones</p></a></li>
+            <li class="ml-5"><a href=""><p>Horarios</p></a></li>
+            <li class="ml-5"><a href=""><p>Clases</p></a></li>
+        </ul>
+        <div class="d-flex flex-row flex-grow-1 flex-wrap">
+            <p class="text-white  align-self-end mr-2" style="font-size: 10px !important;">ATENCIÓN AL CLIENTE</p>
+            <p class="text-white  align-self-end ml-2" style="font-size: 10px !important;">POLÍTICA DE PRIVACIDAD</p>
+            
+        </div>
+    </footer>
+    <script>
+        function abrirBarraLateral() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
+</body>
+</html>
+<!-- clip-path: polygon(0 0, 100% 0, 0 100%);shape-rendering: geometricPrecision;object-fit: cover; -->

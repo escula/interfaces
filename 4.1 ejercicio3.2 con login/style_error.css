@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&display=swap');
+@import url(fuentes.css);
+:root{
+    --background-header-color:rgb(229,250,65,1);
+    --photo-main:url("assets/error.png");
+    --background-footer: #1184FA;
+    --color-message: #EE1D52;
+}
+
+header{
+    background-color: var(--background-header-color);
+}
+main{
+    height: 50vh;
+    background-image: var(--photo-main);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+footer{
+    background-color: var(--background-footer);
+    height: 50vh;
+}
+h1{
+    border-color: black;
+    color: var(--color-message);
+    -webkit-text-stroke-width: 3px;
+}
+
+

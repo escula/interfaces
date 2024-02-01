@@ -6,17 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="registro.css">
-    <script src="registrar.js"></script>
 </head>
 <body>
-    <form action="">
+    <form action="" id="formulario">
         <label for="">Nombre Usuario</label>
-        <input type="text" id="nombreUsuario"placeholder="" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+        <input type="text" id="nombreUsuario"placeholder="">
         <label for="">Contraseña</label>
-        <input type="text" id="contrasenaUsuario" value="pulsar">
+        <input type="text" id="contrasenaUsuario" >
         <label for="" >Confirmar contraseña</label>
-        <input type="text" id="contrasenaConfirmar" value="pulsar">
+        <input type="text" id="contrasenaConfirmar" >
         <button>Registrar</button>
+        <button>Resetear</button>
     </form>
+    <script src="registrar.js"></script>
 </body>
 </html>

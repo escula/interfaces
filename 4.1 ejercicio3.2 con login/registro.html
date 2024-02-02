@@ -10,13 +10,40 @@
 <body>
     <form action="" id="formulario">
         <label for="">Nombre Usuario</label>
-        <input type="text" id="nombreUsuario"placeholder="">
+        <input type="text" id="nombreUsuario" required>
         <label for="">Contraseña</label>
-        <input type="text" id="contrasenaUsuario" >
+        <input type="text" id="contrasenaUsuario" required>
         <label for="" >Confirmar contraseña</label>
-        <input type="text" id="contrasenaConfirmar" >
-        <button>Registrar</button>
-        <button>Resetear</button>
+        <input type="text" id="contrasenaConfirmar" required>
+        
+        <label for="" >Nombre de persona</label>
+        <input type="text" id="nombrePersona" required>
+        
+        <label for="sexo" >Seleccione el sexo</label>
+        <select id="sexo" required>
+            <option value="Mujer">Mujer</option>
+            <option value="Hombre">Hombre</option>
+            <option value="Otro">Otro</option>
+        </select>
+
+        <label for="fechaNacimiento" >Fecha de nacimiento</label>
+        <input type="date" id="fechaNacimiento" required >
+        
+        <label for="foto">Introduzca la imagen</label>
+        <input type="file" id="foto" required>
+
+        <label for="aficionesEintereses" >Seleccione el sexo</label>
+        <select id="aficionesEintereses" required>
+            <option value="baloncesto">Baloncesto</option>
+            <option value="futbol">Futbol</option>
+            <option value="balonmano">Balonmano</option>
+            <option value="parchis">Parchis</option>
+            <option value="trigonometria">Trigonometria</option>
+        </select>
+
+
+        <button type="button" id="resetear">Resetear</button>
+        <button>Enviar</button>
     </form>
     <script src="registrar.js"></script>
 </body>

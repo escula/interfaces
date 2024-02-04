@@ -2,62 +2,61 @@
 document.getElementById('formulario').addEventListener('submit',function (params) {
     params.preventDefault();
 
-    if(escorrectoNombre() && esCorrectaContrasena()){
-        window.alert("se ha enviado correctamente")
-        document.getElementById('nombreUsuario').value=""
-        document.getElementById('contrasenaUsuario').value=""
-        document.getElementById('contrasenaConfirmar').value=""
-        document.getElementById('nombrePersona').value=""
-        document.getElementById('sexo').value=""
-        document.getElementById('foto').value=""
-        document.getElementById('fechaNacimiento').value=""
-        document.getElementById('aficionesEintereses').value=""
+        if(esCorrectaContrasena()){ //Los pongo separados porque al ponerlos en un if con && no fun
+       const nombreUsuario=document.getElementById('nombreUsuario')
+       const contra=document.getElementById('contrasenaUsuario')
+       const contraRep=document.getElementById('contrasenaConfirmar')
+       const nomPersona=document.getElementById('nombrePersona')
+       const sexo=document.getElementById('sexo')
+       const foto=document.getElementById('foto')
+       const fechaNacimiento=document.getElementById('fechaNacimiento')
+       const aficionesEintereses=document.getElementById('aficionesEintereses')
+       const comentario=document.getElementById('comentario')
 
-    }
+            window.alert(
+                "Nombre Usuario="+nombreUsuario.value
+                +"\ncontraseña="
+                +contra.value+"\nNombre persona="
+                +nomPersona.value+"\nsexo="
+                +sexo.value+"\n foto perfil="
+                +foto.value+"\nfecha nacimiento="
+                +fechaNacimiento.value
+                +"\n Aficiones e intereses="+aficionesEintereses.value
+                +"\n Comentario="+comentario.value
+            )
+
+            nombreUsuario.value=""
+            document.getElementById('contrasenaUsuario').value=""
+            contra.value=""
+            contraRep.value=""
+            nomPersona.value=""
+            sexo.value="Mujer"
+            foto.value=""
+            fechaNacimiento.value=""
+            aficionesEintereses.value=""
+            comentario.value=""
+        }
+    return NoContent();
+    
 
 })
 
-function estaBienNombre(nombre) {
-    regx=/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    return regx.test(nombre);
-}
-function escorrectoNombre(){
-    const nombreUsuario=document.getElementById('nombreUsuario');
-
-    if(estaBienNombre(nombreUsuario.value)){
-        if(document.getElementById("errorNombre")){
-            document.getElementById("errorNombre").remove()
-        }
-    }else{
-        if(!document.getElementById("errorNombre")){
-
-            let error=document.createElement('p')
-            error.setAttribute("id","errorNombre")
-            error.innerHTML="Esta incorrecto el usuario, debe poner un correo"
-            nombreUsuario.after(error)
-        }
-    }
-}
-//Comprueba si ambas contraseñas coinciden
-//Devuelve true ->Si coincide
-//Devuelve false si esta mal
-
 function esCorrectaContrasena(){
-    let resultado="";
+    let resultado=false;
     const contra=document.getElementById("contrasenaUsuario")
     const confirmaContr=document.getElementById("contrasenaConfirmar")
-    console.log("hola")
+
     if(contra.value===confirmaContr.value){
         if(document.getElementById("errorContra")){
             document.getElementById("errorContra").remove()
         }
         resultado= true
     }else{
-    console.log("aqui")
         if(!document.getElementById("errorContra")){
             let error=document.createElement('p')
             error.setAttribute("id","errorContra")
             error.innerHTML="No coincide la contraseña"
+            confirmaContr.after(error)
             resultado= false
         }
     }
